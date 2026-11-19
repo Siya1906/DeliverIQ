@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeliverIQ | Delivery Analytics</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="chart.umd.min.js"></script>
+
+    <style>
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        .analytics-card {
+            background: #151d2d;
+            padding: 24px;
+            border-radius: 12px;
+            min-width: 0;
+        }
+
+        .analytics-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .analytics-card p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .analytics-chart {
+            height: 300px;
+            position: relative;
+        }
+
+        .back-link {
+            color: #a78bfa;
+            text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+
+        <header class="topbar">
+            <div>
+                <a href="index.html" class="back-link">← Back to Dashboard</a>
+                <h1>Delivery Analytics</h1>
+                <p>Understand the factors affecting delivery performance.</p>
+            </div>
+        </header>
+
+        <section class="analytics-grid">
+
+            <div class="analytics-card">
+                <h3>Traffic Impact</h3>
+                <p>Average delivery time across traffic conditions</p>
+                <div class="analytics-chart">
+                    <canvas id="trafficChart"></canvas>
+                </div>
+            </div>
+
+            <div class="analytics-card">
+                <h3>Weather Impact</h3>
+                <p>Average delivery time across weather conditions</p>
+                <div class="analytics-chart">
+                    <canvas id="weatherChart"></canvas>
+                </div>
+            </div>
+
+            <div class="analytics-card">
+                <h3>Vehicle Condition</h3>
+                <p>Average delivery time by vehicle condition</p>
+                <div class="analytics-chart">
+                    <canvas id="vehicleChart"></canvas>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="analytics.js"></script>
+</body>
+</html>

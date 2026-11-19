@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeliverIQ | Locations</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .locations-section {
+            margin-top: 30px;
+            background: #151d2d;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .location-summary {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin: 20px 0;
+        }
+
+        .summary-card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .summary-card p {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        .summary-card h2 {
+            color: #a78bfa;
+            margin-top: 10px;
+        }
+
+        .location-search {
+            margin: 25px 0;
+        }
+
+        .location-search input {
+            padding: 12px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            color: white;
+            border-radius: 8px;
+            width: 280px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #cbd5e1;
+            min-width: 850px;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #263247;
+            font-size: 13px;
+        }
+
+        th {
+            color: #a78bfa;
+        }
+
+        .back-link {
+            color: #a78bfa;
+            text-decoration: none;
+        }
+
+        @media (max-width: 700px) {
+            .location-summary {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-content">
+
+        <header class="topbar">
+            <div>
+                <a href="index.html" class="back-link">← Back to Dashboard</a>
+                <h1>Delivery Locations</h1>
+                <p>Explore restaurant and customer delivery coordinates.</p>
+            </div>
+        </header>
+
+        <section class="locations-section">
+
+            <h2>Location Overview</h2>
+
+            <div class="location-summary">
+                <div class="summary-card">
+                    <p>Location Records Available</p>
+                    <h2 id="locationCount">Loading...</h2>
+                </div>
+
+                <div class="summary-card">
+                    <p>Average Delivery Distance</p>
+                    <h2 id="averageDistance">Loading...</h2>
+                </div>
+            </div>
+
+            <div class="location-search">
+                <input
+                    type="text"
+                    id="locationSearch"
+                    placeholder="Search by Order ID or City..."
+                >
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>City</th>
+                            <th>Restaurant Coordinates</th>
+                            <th>Delivery Coordinates</th>
+                            <th>Delivery Time</th>
+                            <th>Distance (km)</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="locationsTable">
+                        <tr>
+                            <td colspan="6">Loading locations...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="locations.js"></script>
+
+</body>
+</html>

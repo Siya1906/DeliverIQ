@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeliverIQ | Delivery Personnel</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .personnel-section {
+            margin-top: 30px;
+            background: #151d2d;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .personnel-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .personnel-stat {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .personnel-stat p {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        .personnel-stat h2 {
+            margin-top: 10px;
+            color: #a78bfa;
+        }
+
+        .personnel-toolbar {
+            margin: 25px 0;
+        }
+
+        .personnel-toolbar input {
+            padding: 12px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            color: white;
+            border-radius: 8px;
+            width: 280px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #cbd5e1;
+            min-width: 650px;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #263247;
+        }
+
+        th {
+            color: #a78bfa;
+            font-size: 13px;
+        }
+
+        td {
+            font-size: 13px;
+        }
+
+        .back-link {
+            color: #a78bfa;
+            text-decoration: none;
+        }
+
+        @media (max-width: 700px) {
+            .personnel-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-content">
+
+        <header class="topbar">
+            <div>
+                <a href="index.html" class="back-link">← Back to Dashboard</a>
+                <h1>Delivery Personnel</h1>
+                <p>Monitor delivery partner performance and ratings.</p>
+            </div>
+        </header>
+
+        <section class="personnel-section">
+
+            <h2>Personnel Overview</h2>
+
+            <div class="personnel-stats">
+                <div class="personnel-stat">
+                    <p>Total Personnel</p>
+                    <h2 id="totalPersonnel">Loading...</h2>
+                </div>
+
+                <div class="personnel-stat">
+                    <p>Average Rating</p>
+                    <h2 id="averageRating">Loading...</h2>
+                </div>
+
+                <div class="personnel-stat">
+                    <p>Average Deliveries per Person</p>
+                    <h2 id="averageDeliveries">Loading...</h2>
+                </div>
+            </div>
+
+            <div class="personnel-toolbar">
+                <input
+                    type="text"
+                    id="searchPersonnel"
+                    placeholder="Search by Delivery Person ID..."
+                >
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Delivery Person ID</th>
+                            <th>Total Deliveries</th>
+                            <th>Average Age</th>
+                            <th>Average Rating</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="personnelTable">
+                        <tr>
+                            <td colspan="4">Loading personnel...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="personnel.js"></script>
+
+</body>
+</html>
